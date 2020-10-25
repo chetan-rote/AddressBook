@@ -89,5 +89,26 @@ namespace AddressBook
                 Console.WriteLine("No Contacts matched with given first name");
             }
         }
+        /// <summary>
+        /// Deletes the contact.
+        /// </summary>
+        /// <param name="firstName">The first name.</param>
+        public void deleteContact(string firstName)
+        {
+            int found = 0;
+            foreach (KeyValuePair<string, Contacts> dict in dictionary)
+            {
+                if (firstName.Equals(dict.Key))
+                {
+                    dictionary.Remove(firstName);
+                    found = 1;
+                    Console.WriteLine("Contact deleted");
+                }
+            }
+            if (found == 0)
+            {
+                Console.WriteLine("No Contacts matched with given first name");
+            }
+        }
     }
 }
